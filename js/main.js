@@ -78,107 +78,192 @@
     var BitChk = [0x00, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02, 0x01];
     var SegOffsetX = [null, 10, 8, 62, 0, -2, 52, -10];
     var SegOffsetY = [null, 10, 12, 7, 59, 61, 56, 108];
-    for(let i=0; i<8; i++){
-      console.log(' Segment',bitInfo,i,(bitInfo & BitChk[i])!=0 );
-    }
+    // for(let i=0; i<8; i++){
+    //   console.log(' Segment',bitInfo,i,(bitInfo & BitChk[i])!=0 );
+    // }
     //セグメント１作成
     if (bitInfo & BitChk[1]){
-      ctx.beginPath();
-      ctx.moveTo(ix+SegOffsetX[1],iy+SegOffsetY[1]);
-      ctx.lineTo(ix+SegOffsetX[1]+10,iy+SegOffsetY[1]-10);
-      ctx.lineTo(ix+SegOffsetX[1]+45,iy+SegOffsetY[1]-10);
-      ctx.lineTo(ix+SegOffsetX[1]+50,iy+SegOffsetY[1]-5);
-      ctx.lineTo(ix+SegOffsetX[1]+40,iy+SegOffsetY[1]+5);
-      ctx.lineTo(ix+SegOffsetX[1]+5,iy+SegOffsetY[1]+5);
-      ctx.lineTo.closePath;
-      ctx.fillStyle = '#000000';
-      ctx.fill();
+      drawHSeg(ctx,ix+SegOffsetX[1],iy+SegOffsetY[1]);
     }
     //セグメント２作成
     if (bitInfo & BitChk[2]){
-      ctx.beginPath();
-      ctx.moveTo(ix+SegOffsetX[2],iy+SegOffsetY[2]);
-      ctx.lineTo(ix+SegOffsetX[2]+5,iy+SegOffsetY[2]+5);
-      ctx.lineTo(ix+SegOffsetX[2],iy+SegOffsetY[2]+35);
-      ctx.lineTo(ix+SegOffsetX[2]-10,iy+SegOffsetY[2]+45);
-      ctx.lineTo(ix+SegOffsetX[2]-15,iy+SegOffsetY[2]+40);
-      ctx.lineTo(ix+SegOffsetX[2]-10,iy+SegOffsetY[2]+10);
-      ctx.lineTo.closePath;
-      ctx.fillStyle = '#000000';
-      ctx.fill();
+      drawVSeg(ctx,ix+SegOffsetX[2],iy+SegOffsetY[2]);
     } 
     //セグメント３作成
     if (bitInfo & BitChk[3]){
-      //console.log('BitSeg3 ');
-      ctx.beginPath();
-      ctx.moveTo(ix+SegOffsetX[3],iy+SegOffsetY[3]);
-      ctx.lineTo(ix+SegOffsetX[3]+5,iy+SegOffsetY[3]+5);
-      ctx.lineTo(ix+SegOffsetX[3],iy+SegOffsetY[3]+35);
-      ctx.lineTo(ix+SegOffsetX[3]-10,iy+SegOffsetY[3]+45);
-      ctx.lineTo(ix+SegOffsetX[3]-15,iy+SegOffsetY[3]+40);
-      ctx.lineTo(ix+SegOffsetX[3]-10,iy+SegOffsetY[3]+10);
-      ctx.lineTo.closePath;
-      ctx.fillStyle = '#000000';
-      ctx.fill();
+      drawVSeg(ctx,ix+SegOffsetX[3],iy+SegOffsetY[3]);
     } 
     //セグメント４作成
     if (bitInfo & BitChk[4]){
-      ctx.beginPath();
-      ctx.moveTo(ix+SegOffsetX[4],iy+SegOffsetY[4]);
-      ctx.lineTo(ix+SegOffsetX[4]+10,iy+SegOffsetY[4]-10);
-      ctx.lineTo(ix+SegOffsetX[4]+45,iy+SegOffsetY[4]-10);
-      ctx.lineTo(ix+SegOffsetX[4]+50,iy+SegOffsetY[4]-5);
-      ctx.lineTo(ix+SegOffsetX[4]+40,iy+SegOffsetY[4]+5);
-      ctx.lineTo(ix+SegOffsetX[4]+5,iy+SegOffsetY[4]+5);
-      ctx.lineTo.closePath;
-      ctx.fillStyle = '#000000';
-      ctx.fill();
+      drawHSeg(ctx,ix+SegOffsetX[4],iy+SegOffsetY[4]);
     } 
     //セグメント５作成
     if (bitInfo & BitChk[5]){
-      ctx.beginPath();
-      ctx.moveTo(ix+SegOffsetX[5],iy+SegOffsetY[5]);
-      ctx.lineTo(ix+SegOffsetX[5]+5,iy+SegOffsetY[5]+5);
-      ctx.lineTo(ix+SegOffsetX[5],iy+SegOffsetY[5]+35);
-      ctx.lineTo(ix+SegOffsetX[5]-10,iy+SegOffsetY[5]+45);
-      ctx.lineTo(ix+SegOffsetX[5]-15,iy+SegOffsetY[5]+40);
-      ctx.lineTo(ix+SegOffsetX[5]-10,iy+SegOffsetY[5]+10);
-      ctx.lineTo.closePath;
-      ctx.fillStyle = '#000000';
-      ctx.fill();
+      drawVSeg(ctx,ix+SegOffsetX[5],iy+SegOffsetY[5]);
     } 
     //セグメント６作成
     if (bitInfo & BitChk[6]){
-      //console.log('BitSeg6 ');
-      ctx.beginPath();
-      ctx.moveTo(ix+SegOffsetX[6],iy+SegOffsetY[6]);
-      ctx.lineTo(ix+SegOffsetX[6]+5,iy+SegOffsetY[6]+5);
-      ctx.lineTo(ix+SegOffsetX[6],iy+SegOffsetY[6]+35);
-      ctx.lineTo(ix+SegOffsetX[6]-10,iy+SegOffsetY[6]+45);
-      ctx.lineTo(ix+SegOffsetX[6]-15,iy+SegOffsetY[6]+40);
-      ctx.lineTo(ix+SegOffsetX[6]-10,iy+SegOffsetY[6]+10);
-      ctx.lineTo.closePath;
-      ctx.fillStyle = '#000000';
-      ctx.fill();
+      drawVSeg(ctx,ix+SegOffsetX[6],iy+SegOffsetY[6]);
     } 
     //セグメント７作成
     if (bitInfo & BitChk[7]){
-      ctx.beginPath();
-      ctx.moveTo(ix+SegOffsetX[7],iy+SegOffsetY[7]);
-      ctx.lineTo(ix+SegOffsetX[7]+10,iy+SegOffsetY[7]-10);
-      ctx.lineTo(ix+SegOffsetX[7]+45,iy+SegOffsetY[7]-10);
-      ctx.lineTo(ix+SegOffsetX[7]+50,iy+SegOffsetY[7]-5);
-      ctx.lineTo(ix+SegOffsetX[7]+40,iy+SegOffsetY[7]+5);
-      ctx.lineTo(ix+SegOffsetX[7]+5,iy+SegOffsetY[7]+5);
-      ctx.lineTo.closePath;
-      ctx.fillStyle = '#000000';
-      ctx.fill();
+      drawHSeg(ctx,ix+SegOffsetX[7],iy+SegOffsetY[7]);
     }
+  }
+
+  function drawHSeg(ctx, ix ,iy ){
+    ctx.beginPath();
+    ctx.moveTo(ix,iy);
+    ctx.lineTo(ix+10,iy-10);
+    ctx.lineTo(ix+45,iy-10);
+    ctx.lineTo(ix+50,iy-5);
+    ctx.lineTo(ix+40,iy+5);
+    ctx.lineTo(ix+5,iy+5);
+    ctx.lineTo.closePath;
+    ctx.fillStyle = '#000000';
+    ctx.fill();
+  }
+  function drawVSeg(ctx, ix ,iy ){
+    ctx.beginPath();
+    ctx.moveTo(ix,iy);
+    ctx.lineTo(ix+5,iy+5);
+    ctx.lineTo(ix,iy+35);
+    ctx.lineTo(ix-10,iy+45);
+    ctx.lineTo(ix-15,iy+40);
+    ctx.lineTo(ix-10,iy+10);
+    ctx.lineTo.closePath;
+    ctx.fillStyle = '#000000';
+    ctx.fill();
+  }
+
+  function putAlalogClock(ix,iy,r) {
+    const canvas = document.querySelector('canvas');
+    if (typeof canvas.getContext === 'undefined') {
+      return;
+    }
+    const ctx = canvas.getContext('2d');
+    // 目盛りの描画
+    for ( let icnt=0 ; icnt< 360 ; icnt += 6){
+      drawLine ( ctx, allocX( ix , r+25 ,icnt), allocY(iy, r+25,icnt), allocX( ix , r+20 ,icnt), allocY(iy, r+20,icnt));    
+    }
+    for ( let icnt=0 ; icnt< 360 ; icnt += 30){
+      drawCircle ( ctx, allocX( ix , r+15 ,icnt), allocY(iy, r+15,icnt), 5);    
+    }
+    for ( let icnt=0 ; icnt< 360 ; icnt += 90){
+      drawQuad ( ctx, allocX( ix+8 , r+15 ,icnt), allocY(iy+8, r+15,icnt), allocX( ix+8 , r+15 ,icnt), allocY(iy-8, r+15,icnt), allocX( ix-8 , r+15 ,icnt), allocY(iy-8, r+15,icnt), allocX( ix-8 , r+15 ,icnt), allocY(iy+8, r+15,icnt));    
+    }
+    // drawQuad ( ctx, allocX( ix+8 , r+12 ,270), allocY(iy+8, r+12,270), allocX( ix+8 , r+12 ,270), allocY(iy-8, r+12,270), allocX( ix-8 , r+12 ,270), allocY(iy-8, r+12,270), allocX( ix-8 , r+12 ,270), allocY(iy+8, r+12,270));    
+  } // end of function putAnalogClock  
+
+  // 点の回転配置（角度deg）
+  function allocX( ix, r, deg) {
+    let rate = Math.PI / 180;
+    return ix + r * Math.cos(rate * deg) ;
+  }
+
+  function allocY( iy, r, deg) {
+    let rate = Math.PI / 180;
+    return iy + r * Math.sin(rate * deg);
+  }
+ 
+  // 座標回転（角度deg）
+  function rotateX( ix, iy, deg) {
+    let rate = Math.PI / 180;
+    return ix  * Math.cos(rate * deg) + iy * Math.sin(rate *deg) ;
+  }
+  function rotateY( ix, iy, deg) {
+    let rate = Math.PI / 180;
+    return ix  * Math.sin(rate * deg) - iy * Math.cos(rate *deg) ;
+  }
+
+  // 円の描画
+  function drawCircle(ctx, ix, iy, r){
+    ctx.beginPath();
+    ctx.arc(ix, iy, r, 0, 2*Math.PI);
+    ctx.closePath;
+    ctx.fillStyle = '#000000';
+    ctx.fill();
+  }  
+  // 四辺形の描画
+  function drawQuad(ctx, x1,y1,x2,y2,x3,y3,x4,y4){
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.lineTo(x3, y3);
+    ctx.lineTo(x4, y4);
+    ctx.lineTo.closePath;
+    ctx.fillStyle = '#000000';
+    ctx.fill();
+  }  
+  // 線の描画
+  function drawLine(ctx, ix, iy, x1,y1){
+    ctx.beginPath();
+    ctx.moveTo(ix, iy);
+    ctx.lineTo(x1, y1);
+    ctx.strokestyle = '#000000';
+    ctx.stroke();
+  }
+    // 針削除処理（一括）
+  function ClearHands(ctx, ix, iy, r){
+    ctx.beginPath();
+    ctx.moveTo(ix,iy);
+    ctx.arc(ix, iy, r, 0, 2*Math.PI);
+    ctx.closePath;
+    ctx.fillStyle = '#aaa';
+    ctx.fill();
+
+  }
+   // 針の描画
+  function DrawHands(ix, iy, r,hour, min, sec){
+    const canvas = document.querySelector('canvas');
+    if (typeof canvas.getContext === 'undefined') {
+      return;
+    }
+    const ctx = canvas.getContext('2d');
+    ClearHands(ctx, ix, iy, r );
+    let iHour= parseInt (hour);
+    let iMin= parseInt (min);
+    let iSec= parseInt (sec);
+    if (iHour>=12) {
+      iHour -=12;
+    }
+    let ShortHand= 360*iHour/12+30*iMin/60;
+    let LongHand=  360*iMin/60+6*iSec/60;
+    let SecondHand = 360*iSec/60;
+    console.log('SH',ShortHand);
+    console.log('LH',LongHand);
+    console.log('SecH',SecondHand);
+    // 短針の描画
+    ShortHand -= 90;
+    if (ShortHand < 0){
+      ShortHand += 360;
+    }
+    drawQuad ( ctx, ix+rotateX(-5,+3,ShortHand), iy+rotateY(-5,+3,ShortHand), ix+rotateX(+58,+3,ShortHand), iy+rotateY(+58,+3,ShortHand), ix+rotateX(+58,-3,ShortHand), iy+rotateY(+58,-3,ShortHand), ix+rotateX(-5,-3,ShortHand), iy+rotateY(-5,-3,ShortHand));    
+    console.log('SX',ix+rotateX(+58,+3,ShortHand));
+    console.log('SY',iy+rotateX(+58,+3,ShortHand));
+    // 長針の描画
+    LongHand -= 90;
+    if (LongHand < 0){
+      LongHand += 360;
+    }
+    drawQuad ( ctx, ix+rotateX(-10,+3 ,LongHand), iy+rotateY(-10,+3,LongHand), ix+rotateX(+98,+3,LongHand), iy+rotateY(+98,+3,LongHand), ix+rotateX(+98,-3,LongHand), iy+rotateY(+98,-3,LongHand), ix+rotateX(-10,-3,LongHand), iy+rotateY(-10,-3,LongHand));    
+    console.log('LX',ix+rotateX(+98,+3,LongHand));
+    console.log('LY',iy+rotateX(+98,+3,LongHand));
+
+    // 秒針の描画
+    SecondHand -= 90;
+    if (SecondHand < 0){
+      SecondHand += 360;
+    }
+    drawLine ( ctx, ix+rotateX( -20,0,SecondHand), iy+rotateY(-20,0,SecondHand), ix+rotateX(+98,0,SecondHand), iy+rotateY(+98,0,SecondHand));   
+    console.log('SecX',ix+rotateX(-10,0,SecondHand));
+    console.log('SecY',iy+rotateY(+98,0,SecondHand));
 
   }
 
   let pre_msec = 0;
   let blink_On = 0;
+  putAlalogClock(300,200,100);
 
   function showSeconds(){
   
@@ -192,13 +277,14 @@
       if (msec > 900 && blink_On ===0){
         let curTime = hour + ' ' + min + ' ' + sec;
         //console.log(`${hour} ${min} ${sec}`);
-        putStr2(curTime,25,50);
+        putStr2(curTime,25,400);
         blink_On = 1;
       }
       if (msec < pre_msec){
         let curTime = hour + ':' + min + ':' + sec;
         //console.log(`${hour}:${min}:${sec}`);
-        putStr2(curTime,25,50);
+        putStr2(curTime,25,400);
+        DrawHands(300,200,100,hour,min,sec);
         blink_On = 0;
       }
       pre_msec = msec;
