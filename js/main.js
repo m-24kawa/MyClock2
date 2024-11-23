@@ -144,13 +144,13 @@
     const ctx = canvas.getContext('2d');
     // 目盛りの描画
     for ( let icnt=0 ; icnt< 360 ; icnt += 6){
-      drawLine ( ctx, allocX( ix , r+25 ,icnt), allocY(iy, r+25,icnt), allocX( ix , r+20 ,icnt), allocY(iy, r+20,icnt));    
+      drawLine ( ctx, allocX( ix , r+17 ,icnt), allocY(iy, r+17,icnt), allocX( ix , r+13 ,icnt), allocY(iy, r+13,icnt));    
     }
     for ( let icnt=0 ; icnt< 360 ; icnt += 30){
       drawCircle ( ctx, allocX( ix , r+15 ,icnt), allocY(iy, r+15,icnt), 5);    
     }
     for ( let icnt=0 ; icnt< 360 ; icnt += 90){
-      drawQuad ( ctx, allocX( ix+8 , r+15 ,icnt), allocY(iy+8, r+15,icnt), allocX( ix+8 , r+15 ,icnt), allocY(iy-8, r+15,icnt), allocX( ix-8 , r+15 ,icnt), allocY(iy-8, r+15,icnt), allocX( ix-8 , r+15 ,icnt), allocY(iy+8, r+15,icnt));    
+      drawQuad ( ctx, allocX( ix+8 , r+12 ,icnt), allocY(iy+8, r+12,icnt), allocX( ix+8 , r+12 ,icnt), allocY(iy-8, r+12,icnt), allocX( ix-8 , r+12 ,icnt), allocY(iy-8, r+12,icnt), allocX( ix-8 , r+12 ,icnt), allocY(iy+8, r+12,icnt));    
     }
     // drawQuad ( ctx, allocX( ix+8 , r+12 ,270), allocY(iy+8, r+12,270), allocX( ix+8 , r+12 ,270), allocY(iy-8, r+12,270), allocX( ix-8 , r+12 ,270), allocY(iy-8, r+12,270), allocX( ix-8 , r+12 ,270), allocY(iy+8, r+12,270));    
   } // end of function putAnalogClock  
